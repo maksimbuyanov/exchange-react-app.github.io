@@ -1,0 +1,20 @@
+.footer {
+    background-color: #708090;
+    margin-top: 70px;
+    padding-bottom: 100px;
+    padding-top: 20px;
+}
+
+.footer h1, .footer p{
+    font-size: 16px;
+    margin: auto;
+    margin-left: 15px;
+}
+
+.footer .flex-item {
+    flex: 1 1
+}
+
+.footer .flex-container :not(:last-child){
+    margin-right: 30px;
+}

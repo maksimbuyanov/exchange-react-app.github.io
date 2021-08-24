@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(209, 207, 231);
+}
+
+.container {
+  /* background-color: lightslategray; */
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/* .flex-item {
+  margin-right: 20px;
+} */

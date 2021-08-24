@@ -1,0 +1,36 @@
+.calc .flex-container {
+    justify-content: center;
+    align-items: baseline;
+}
+.calc .flex-container p {
+    margin-right: 10px;
+}
+.calc form {
+    margin-bottom: 15px;
+}
+
+.calc input {
+    background: #f1f1f1;
+    border: none;
+    border-radius: 15px;
+    min-height: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 3px;
+}
+
+.calc select {
+    background: inherit;
+    border: none;
+    margin-right: 3px;
+}
+
+.calc option {
+    font-size: 16px;
+}
+.calc-result :first-of-type{
+    display: inline;
+}
+.calc-result :not(:last-child){
+    margin-right: 10px;
+}

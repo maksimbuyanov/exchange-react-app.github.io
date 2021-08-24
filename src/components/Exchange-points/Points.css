@@ -1,0 +1,7 @@
+.points-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.none {
+    display: none;
+}

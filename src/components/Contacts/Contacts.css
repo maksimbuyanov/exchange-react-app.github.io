@@ -1,0 +1,11 @@
+.contacts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch
+}
+
+.contacts-container p {
+    flex: 1 1 auto;
+    padding: 25px 50px 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
