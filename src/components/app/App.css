@@ -18,15 +18,16 @@ a {
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
-
   margin-left: auto;
   margin-right: auto;
   background-color: rgb(209, 207, 231);
 }
 
 .container {
-  /* background-color: lightslategray; */
   max-width: 1200px;
   margin: auto;
 }
@@ -34,7 +35,3 @@ a {
 .flex-container {
   display: flex;
 }
-
-/* .flex-item {
-  margin-right: 20px;
-} */

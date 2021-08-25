@@ -1,27 +1,22 @@
-.points-card {
-    border: 1px solid grey;
+.point-card {
+    display: flex;
     width: 40%;
     flex: 0.4 1 auto;
     padding: 15px 20px 30px;
-    background-color: #708090;
+    border: 1px solid grey;
     margin-bottom: 15px;
+    background-color: #708090;
 }
-.points-card div {
+.point-card__info {
     align-items: center;
     font-size: 14px;
 }
-.points-card div :not(:last-child){
+.point-card__info :not(:last-child){
     margin-bottom: 15px;
 }
-.points-card picture {
+.point-card__pic {
     max-height: 150px;
     max-width: 240px;
     margin-right: 10px;
 }
-.points-card img {
-    max-height: 100%;
-}
 
-.point-card-flex {
-    display: flex;
-}

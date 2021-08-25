@@ -1,4 +1,14 @@
-.main .flex-item {
+.main {
+    margin-top: 20px;
+    flex: 1 0 auto;
+}
+
+.main__content{
+    display: flex;
+    justify-content: space-evenly
+}
+
+.main__item {
     border: 1px solid black;
     margin: 20px;
     padding: 20px 30px;
@@ -6,27 +16,24 @@
     background-color: #708090;
     flex: 0.3 1;
 }
-
-.main .flex-container {
-    justify-content: space-evenly
+.main__item:hover {
+    background-color: lightslategray;
 }
 
-.main h3 {
+.main__date {
     font-size: larger;
     padding-top: 10px;
 }
 
-.main .flex-item div {
+.main__item-name {
     margin-bottom: 20px;
-}
-.main .flex-item :last-child {
-    margin-bottom: 0px;
-}
-.main .flex-item :first-child {
     font-size: 20px;
     font-weight: bolder;
 }
+.main__item :last-child {
+    margin-bottom: 0px;
+}
 
-.currency-promt {
+.main__item-promt {
     
 }

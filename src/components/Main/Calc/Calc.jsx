@@ -5,8 +5,10 @@ class Calc extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            result: 0
+            result: 0,
+            selectedCurrency: ''
         }
+        this.select = React.createRef()
     }
 
     calculate = (e) => {
@@ -19,27 +21,30 @@ class Calc extends React.Component {
     static getDerivedStateFromProps(props, state) {
         return { rate: props.rate }
     }
+    componentDidMount() {
+        this.setState({selectedCurrency: this.select.current.value })
+    }
     render() {
         return (
             <div className='calc'>
-                <form className='flex-container' onSubmit={this.calculate}>
-                    <p className='calc-text'>Что бы получить:</p>
-                    <select name="type" >
+                <form className='calc-form' onSubmit={this.calculate}>
+                    <p className='calc-form__text'>Что бы получить:</p>
+                    <select className='calc-form__select' name="type" ref={this.select}>
                         {Object.keys(this.props.rate).map(i => {
                             return (
                                 <option key={i}>{i}</option>
                             )
                         })}
                     </select>
-                    <input type="number" defaultValue='100' name='count' />
-                    <input type="submit" value="Расчитать" />
+                    <input className='calc-form__input' type="number" defaultValue='100' name='count' />
+                    <input className='calc-form__input' type="submit" value="Расчитать" />
                 </form>
                 <div className='calc-result'>
-                    <h4>Нужно</h4>
-                    <div>
+                    <h4 className='calc-result__title'>Нужно</h4>
+                    <div className='calc-result__number'>
                         {this.state.result}
                     </div>
-                    <p>EUR</p>
+                    <p className='calc-result__currency'>{this.props.base}</p>
                 </div>
             </div>
         )

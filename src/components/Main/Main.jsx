@@ -17,26 +17,32 @@ class Main extends React.Component {
                 BTC: 0.0002
             }
         }
+        this.CalcComp = React.createRef()
+    }
+
+    selectCurrency = (event) => {
+        const ratesArray = Object.keys(this.state.rates)
+        if (ratesArray.includes(event.target.firstChild.textContent)) {
+            this.CalcComp.current.select.current.value = event.target.firstChild.textContent
+        }
     }
 
     render() {
         return (
             <div className='main'>
                 <div className='container'>
-                    <h3 className='main-date'> Курс валют на {this.state.date.toLocaleDateString()}</h3>
-                    <div className='flex-container'>
+                    <h3 className='main__date'> Курс валют на {this.state.date.toLocaleDateString()}</h3>
+                    <div className='main__content'>
                         {Object.keys(this.state.rates).map(i => {
-
                             return (
-                                <div className='flex-item' key={i}>
-                                    <div className='currency-name'>{i}</div>
-                                    <p className='currency-promt'>{this.state.rates[i]} {i}<br/> за 1 {this.state.base}</p>
-                                    
+                                <div className='main__item' key={i} onClick={this.selectCurrency}>
+                                    <div className='main__item-name'>{i}</div>
+                                    <p className='main__item-promt'>{this.state.rates[i]} {i}<br /> за 1 {this.state.base}</p>
                                 </div>)
                         })
                         }
                     </div>
-                    <Calc rate={this.state.rates}/>
+                    <Calc rate={this.state.rates} base={this.state.base} ref={this.CalcComp}/>
                 </div>
             </div>
         )

@@ -9,17 +9,11 @@ class Header extends React.Component {
     render() {
         return (
             <header className='header'>
-                <div className='top-bar'></div>
-                <div className='main-header'>
-                    <div className='container'>
-                        <h1 className='site-title'>ExChange</h1>
-                    </div>
+                <div className='header__top-bar'>Тут могла быть Ваша реклама</div>
+                <div className='container'>
+                    <h1 className='header__title'>ExChange</h1>
                 </div>
-                <div className='header-nav'>
-                    <div className='container'>
-                        <Nav />
-                    </div>
-                </div>
+                <Nav />
             </header>
         )
     }

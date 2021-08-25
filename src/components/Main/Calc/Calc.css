@@ -1,15 +1,14 @@
-.calc .flex-container {
+.calc-form {
+    display: flex;
     justify-content: center;
     align-items: baseline;
-}
-.calc .flex-container p {
-    margin-right: 10px;
-}
-.calc form {
     margin-bottom: 15px;
 }
+.calc-form__text {
+    margin-right: 10px;
+}
 
-.calc input {
+.calc-form__input {
     background: #f1f1f1;
     border: none;
     border-radius: 15px;
@@ -19,18 +18,18 @@
     margin-right: 3px;
 }
 
-.calc select {
+.calc-form__select {
     background: inherit;
     border: none;
     margin-right: 3px;
 }
 
-.calc option {
-    font-size: 16px;
-}
 .calc-result :first-of-type{
     display: inline;
 }
 .calc-result :not(:last-child){
     margin-right: 10px;
+}
+.calc-result__currency {
+    font-weight: bold;
 }

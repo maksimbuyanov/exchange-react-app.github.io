@@ -1,7 +1,9 @@
-.points-flex {
+.points {
+    margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 0 auto;
 }
-.none {
+.points-none {
     display: none;
 }

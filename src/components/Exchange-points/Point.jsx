@@ -9,16 +9,16 @@ class Point extends React.Component {
         let host = window.location.origin
         return (
             
-            <div className='points-card container point-card-flex'>
-                <picture>
+            <div className='point-card container'>
+                <picture className='point-card__pic'>
                     <source srcSet={host+this.props.img}/>
-                    <img src={host+this.props.img} alt='exchange-point'/>
+                    <img src={host+this.props.img} alt={this.props.title}/>
                 </picture>
-                <div>
-                    <h3 className='points-title'> {this.props.title}</h3>
-                    <p className='points-text'>{this.props.text}</p>
-                    <address className='points-contact'>{this.props.address}</address>
-                    <a className='points-tel' href={'tel:'+this.props.tel}>{this.props.tel}</a>
+                <div className='point-card__info'>
+                    <h3 className='point-card__title'> {this.props.title}</h3>
+                    <p className='point-card__text'>{this.props.text}</p>
+                    <address className='point-card__contact'>{this.props.address}</address>
+                    <a className='point-card__tel' href={'tel:'+this.props.tel}>{this.props.tel}</a>
                 </div>
             </div>
         )

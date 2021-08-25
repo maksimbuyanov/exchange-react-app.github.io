@@ -7,19 +7,22 @@ class Points extends React.Component {
         super(props);
         this.pointsContainer = React.createRef();
     }
-    // componentDidMount () {
-    //     console.log(this.pointsContainer.current)
-    //     this.pointsContainer.current.classList.remove('none')
-    // }
+
     componentDidMount () {
-        setTimeout(()=>this.pointsContainer.current.classList.remove('none') ,700)
+        setTimeout(()=>this.pointsContainer.current.classList.remove('points-none') ,700)
         
     }
 
     render() {
         return (
-            <div className='container points-flex none' ref={this.pointsContainer}>
+            <div className='container points points-none' ref={this.pointsContainer}>
                 {Object.values(this.props.data).map (i => {
+                    return <Point key={i.pointName} title={i.pointName} text={i.about} address={i.address} img={i.img} tel={i.tel}/>
+                })}
+                 {Object.values(this.props.data).map (i => {
+                    return <Point key={i.pointName} title={i.pointName} text={i.about} address={i.address} img={i.img} tel={i.tel}/>
+                })}
+                 {Object.values(this.props.data).map (i => {
                     return <Point key={i.pointName} title={i.pointName} text={i.about} address={i.address} img={i.img} tel={i.tel}/>
                 })}
             </div>

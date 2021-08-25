@@ -1,15 +1,16 @@
 .header-nav {
+    display: flex;
     background: inherit;
 }
-.header-nav li {
+.header-nav__item {
     display: inline-block;
-    padding: 15px 25px 15px;
+    padding: 15px 25px;
 }
-.header-nav li a, .header-nav li a:visited {
-    color: #fff;
+.header-nav__link{
+    color: rgb(0, 0, 0);
     text-decoration: none;
     display: block;
 }
-.header-nav li:hover {
+.header-nav__item:hover {
     background: lightslategray;
 }
