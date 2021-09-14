@@ -9,12 +9,12 @@ class Footer extends React.Component {
             <footer className='footer'>
                 <div className='footer-container container'>
                     <div className='footer-container__item'>
-                        <h1 className='footer-container_title'>
+                        <h1 className='footer-container__title'>
                             <a href='http://vk.com/buyanovmaks'>
                                 2021 &copy; React developer
                             </a>
                         </h1>
-                        <p className='footer-container_subtitle'> All Rights Fuckoff</p>
+                        <p className='footer-container__subtitle'> All Rights Fuckoff</p>
                     </div>
                     <div className='footer-container__item'>
                         <p className='footer-container__text'>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Обеспечивает несколько свое она языком залетают города безопасную

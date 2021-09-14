@@ -20,3 +20,27 @@
     margin-right: 10px;
 }
 
+
+@media (max-width: 900px) {
+    .point-card {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .point-card {
+        min-width: 60%;
+        flex: 1 1;
+    }
+    .point-card__pic {
+        max-height: 100%;
+        max-width: 100%;
+        margin-right: 0;
+    }
+    .point-card__info {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+    }
+}

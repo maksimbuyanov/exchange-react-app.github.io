@@ -1,3 +1,7 @@
+.calc {
+    margin-bottom: 20px;
+}
+
 .calc-form {
     display: flex;
     justify-content: center;
@@ -32,4 +36,18 @@
 }
 .calc-result__currency {
     font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    .calc-form {
+        align-items: stretch;
+        flex-wrap: wrap;    
+    }
+    .calc-form__text {
+        margin-right: 80px;
+    }
+    .calc-form__input {
+        max-width:50%;
+        min-height: 2rem;
+    }
 }

@@ -5,5 +5,5 @@
     flex: 1 0 auto;
 }
 .points-none {
-    display: none;
+    visibility: hidden;
 }

@@ -14,3 +14,20 @@
 .header-nav__item:hover {
     background: lightslategray;
 }
+
+@media (max-width: 900px) {
+    .header-nav {
+      max-width: 650px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-nav {
+        max-width: 300px;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .header-nav__item {
+        padding: 10px 15px;
+    }
+}
