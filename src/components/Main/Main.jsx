@@ -7,31 +7,42 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            base: 'EUR',
-            date: new Date(),
-            rates: {
-                CAD: 1.4682,
-                USD: 1.1139,
-                RUB: 71.0786,
-                EUR: 1,
-                BTC: 0.0002
-            }
+            base: '',
+            date: '',
+            rates: {}
         }
+        this.currency = ['USD', 'RUB', 'CAD', 'BTC']
         this.CalcComp = React.createRef()
     }
-
+    getRate = () => {
+        fetch('http://api.exchangeratesapi.io/v1/latest?access_key=a43674db18bb90b8fd9efb1ac1506bde')
+            .then(data => {
+                return data.json()
+            })
+            .then(data => {
+                this.setState({date: data.date});
+                this.setState({base: data.base});
+                let result={};
+                this.currency.forEach(item => {
+                    result[item]=data.rates[item]
+                })
+                this.setState({rates: result})
+            })
+    }
     selectCurrency = (event) => {
         const ratesArray = Object.keys(this.state.rates)
         if (ratesArray.includes(event.target.firstChild.textContent)) {
             this.CalcComp.current.select.current.value = event.target.firstChild.textContent
         }
     }
-
+    componentDidMount() {
+        this.getRate()
+    }
     render() {
         return (
             <div className='main'>
                 <div className='container'>
-                    <h3 className='main__date'> Курс валют на {this.state.date.toLocaleDateString()}</h3>
+                    <h3 className='main__date'> Курс валют на {this.state.date}</h3>
                     <div className='main__content'>
                         {Object.keys(this.state.rates).map(i => {
                             return (
@@ -42,7 +53,7 @@ class Main extends React.Component {
                         })
                         }
                     </div>
-                    <Calc rate={this.state.rates} base={this.state.base} ref={this.CalcComp}/>
+                    <Calc rate={this.state.rates} base={this.state.base} ref={this.CalcComp} />
                 </div>
             </div>
         )
