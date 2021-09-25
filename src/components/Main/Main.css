@@ -18,7 +18,9 @@
     flex: 0.3 1;
 }
 .main__item:hover {
-    background-color: lightslategray;
+    cursor: pointer;
+    background-color: rgb(209, 207, 231)
+    /* background-color: lightslategray; */
 }
 
 .main__date {
