@@ -36,20 +36,19 @@ class Main extends React.Component {
                 this.setState({ rates: result })
             })
     }
-    _setSelectedCurrency = (currency = this.currency[0]) => {
+    _setSelectedCurrency = (currency = this.currency[2]) => {
         let obj = { currency: currency, rate: this.state.rates[currency] }
         this.setState({ selectedCurrency: obj })
     }
-    _ifUpdateCurrency =  (newcurrency) => {
+    _recalculateUpdateCurrency =  (newcurrency) => {
         let rate = this.state.rates[newcurrency]
         this.setState({ result: (this.state.cash / rate).toFixed(2)})
     }
-    forCalculate = (value) => {
+    calculate = (value) => {
         let cash = this.state.cash 
-
         if (this.currency.includes(value)) {
             this._setSelectedCurrency(value)
-            this._ifUpdateCurrency(value)
+            this._recalculateUpdateCurrency(value)
         } else if (typeof Number(value) === 'number') {
             this.setState({ cash: Number(value) })
             cash = Number(value)
@@ -61,19 +60,16 @@ class Main extends React.Component {
         if (ratesArray.includes(event.target.firstChild.textContent)) {
             let value = event.target.firstChild.textContent
             this._setSelectedCurrency(value)
-            this._ifUpdateCurrency(value)
+            this._recalculateUpdateCurrency(value)
         } else if (ratesArray.includes(event.target.parentElement.firstChild.textContent)) {
             let value = event.target.parentElement.firstChild.textContent
             this._setSelectedCurrency(value)
-            this._ifUpdateCurrency(value)
+            this._recalculateUpdateCurrency(value)
         }
     }
     componentDidMount() {
         this.getRate()
         this._setSelectedCurrency()
-    }
-    componentDidUpdate () {
-
     }
     render() {
         const renderCardCurrency = Object.keys(this.state.rates).map(i => {
@@ -92,10 +88,10 @@ class Main extends React.Component {
                         {renderCardCurrency}
                     </div>
                     <Calc
-                        allCurrency={this.currency}
-                        currency={this.state.selectedCurrency.currency}
+                        allCurrencyArr={this.currency}
+                        selectedCurrency={this.state.selectedCurrency.currency}
                         base={this.state.base}
-                        callback={this.forCalculate}
+                        callback={this.calculate}
                         result={this.state.result}
                         cash={this.state.cash}
                     />

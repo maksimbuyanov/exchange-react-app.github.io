@@ -24,11 +24,8 @@
 
 @media (max-width: 500px) {
     .header-nav {
-        max-width: 300px;
+        max-width: 330px;
         margin: 0 auto;
         align-items: center;
-    }
-    .header-nav__item {
-        padding: 10px 15px;
     }
 }
